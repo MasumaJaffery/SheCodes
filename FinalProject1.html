@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Yogurt</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: #7d51e8;
+        }
+
+        h2 {
+            text-align: center;
+            border: 1px solid #7d51e8;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        p {
+            line-height: 1.5;
+            font-size: 13px;
+            margin: 20px 10px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            background: #7d51e8;
+            color: #fff;
+            font-size: 18px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            transition: all 200ms ease-in-out;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+        .learn-more {
+            color: #7d51e8;
+            text-decoration: none;
+            font-size: 11px;
+        }
+
+        .learn-more:hover {
+            text-decoration: none;
+        }
+
+        .footer {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>I love Greek Yogurt</h1>
+        <h2>Especially Greek Yogurt</h2>
+        <img src="./GY.jpg" alt="Greek Yogurt" width="300" />
+        <p>
+            Strained yogurt, Greek or Greek-style yogurt, yogurt cheese, sack yogurt, kerned yogurt or labneh is yogurt
+            that
+            has been strained to remove most of its whey, resulting in a thicker consistency than normal unstrained
+            yogurt,
+            while still preserving the distinctive sour taste of yogurt.
+            <br />
+            <a href="https://en.wikipedia.org/wiki/Strained_yogurt" target="_blank">
+                Learn more on Wikipedia
+            </a>
+        </p>
+        <button>
+            Buy Greek Yogurt
+        </button>
+    </div>
+    <div class="footer">
+        This page is built by
+        <a href="https://masumajaffery.github.io/Portfolio/" target="_blank">
+            Masuma Jaffery
+        </a>
+    </div>
+    <script>
+        function buy() {
+            let name = prompt('what is your name?');
+            let email = prompt("What is your email address?");
+            let emoji = prompt("What is your favorite emoji?");
+            alert(
+            `Thank you 
+            ${name}! We'll be in touch by email, meanwhile have lots of Yogurt! ${emoji}`
+        );
+
+        }
+        const buybtn = document.querySelector('button');
+        buybtn.addEventListener('click', buy);
+    </script>
+</body>
+
+</html>

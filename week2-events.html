@@ -83,15 +83,19 @@
     </button>
   </section>
   <script>
+    function Update(newHeading) {
+      let h1 = document.querySelector('h1');
+      h1.innerHTML = newHeading;
+      
+    }
     function Apply() {
       let name = prompt('What is your frist name?');
       let age = prompt('What is your Age?');
-      let h1 = document.querySelector('h1');
       if(age >= 18) {
-        h1.innerHTML = 'Hello ' + name +'!'+  ' Welcome to SheCodes!';
+        Update(`Hello ${name}! Welcome to SheCodes!`);
       }
       else {
-        h1.innerHTML = 'Sorry ' + name +'!'+  ' You cannot join SheCodes';
+        Update(`Sorry  ${name}! You cannot join SheCodes`);
       }
     }
     let button = document.querySelector('button');

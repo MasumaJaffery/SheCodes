@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .weather-icon {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .temperature {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .current-city {
+      font-size: 32px;
+      color: #2962ff;
+      margin: 5px 0;
+    }
+
+    .forecast {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+    .forecast-item {
+      width: 320px;
+      height: 100px;
+      margin: 10px 0;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 12px;
+    }
+
+    .forecast-item:hover,
+    .forecast-item:active {
+        background-color: rgb(255, 238, 218);
+    }
+
+    .forecast-item span {
+      font-weight: bold;
+    }
+
+    .change-city-button {
+      margin-top: 30px;
+    }
+
+    .change-city-button button {
+      background-color: #2962ff;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .change-city-button button:hover {
+      background-color: #0039cb;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-app">
+    <div class="weather-icon">☁️</div>
+    <div class="current-city">Currently 21° in Pakistan</div>
+    <div class="temperature">13° / 23°</div>
+    <div class="forecast">
+      <div class="forecast-item">☂️ <span>Tomorrow</span> 10° / 22°</div>
+      <div class="forecast-item">☁️ <span>Saturday</span> 15° / 17°</div>
+      <div class="forecast-item">☀️ <span>Sunday</span> 25° / 28°</div>
+    </div>
+    <div class="change-city-button">
+      <button>Change city</button>
+    </div>
+    <footer>
+      Coded by Masuma Jaffery
+    </footer>
+  </div>
+  <script>
+    function Update(Heading) {
+      let mainheading = document.querySelector('.current-city');
+      mainheading.innerHTML = Heading;
+    }
+    function Emoji(icon) {
+      let emoji = document.querySelector('.weather-icon');
+      emoji.innerHTML = icon;
+    }
+    function Change() {
+      let city = prompt('What city do you live in?');
+      let temp = prompt('What temperature is it?')
+      Update(`Currently ${temp}°C in ${city}`);
+      if(temp < 0) {
+        Emoji('❄️');
+      }
+      else {
+        Emoji('😄');
+      }
+    }
+    let button2 = document.querySelector('button');
+    button2.addEventListener('click', Change);
+  </script>
+</body>
+</html>
